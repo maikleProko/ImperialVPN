@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#070417</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_button_vpn_color">#26212F</color>
+    <color name="line_button_vpn_color">#FFFFFF</color>
+    <color name="common_background_color">#1F1C1F</color>
+    <color name="stroke_background">#3C354B</color>
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="color_window_bg">#eeeeee</color>
+    <color name="colorPrimaryDark">#797979</color>
+    <color name="colorAccent">#6d74ff</color>
+
+    <color name="selector_border">#dedede</color>
+    <color name="picker_box_border">#474747</color>
+    <color name="picker_box_bg">#29262A</color>
+    <color name="ds_list_bg">#292639</color>
+    <color name="picker_list_text">#FFFFFFFF</color>
+
+    <color name="text_option">#9c9c9e</color>
+    <color name="upper_layer_color">#101326</color>
+    <color name="common_button_color">#292639</color>
+</resources>

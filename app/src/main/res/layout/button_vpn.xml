@@ -1,0 +1,94 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/buttonvpnimage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<View
+			android:id="@+id/backgroundbuttonvpn"
+			android:layout_width="214dp"
+			android:layout_height="214dp"
+			android:background="@drawable/background_button_vpn_shape"
+
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<View
+			android:id="@+id/circleloadingsize"
+			android:layout_width="206dp"
+			android:layout_height="206dp"
+			android:alpha="1"
+			android:background="@drawable/loading_shape"
+			android:scaleX="1"
+			android:scaleY="1"
+
+			app:layout_constraintBottom_toBottomOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintEnd_toEndOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintLeft_toLeftOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintRight_toRightOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintStart_toStartOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintTop_toTopOf="@+id/backgroundbuttonvpn" />
+
+
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:id="@+id/signbuttonvpn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintLeft_toLeftOf="parent"
+			app:layout_constraintRight_toRightOf="parent"
+			app:layout_constraintStart_toStartOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintTop_toTopOf="@+id/backgroundbuttonvpn">
+
+			<View
+				android:id="@+id/circlebuttonvpn"
+				android:layout_width="117dp"
+				android:layout_height="143dp"
+				android:layout_marginBottom="8dp"
+				android:background="@drawable/enable_button"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintLeft_toLeftOf="parent"
+				app:layout_constraintRight_toRightOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+		<View
+			android:id="@+id/circlebuttonvpnalpha"
+			android:layout_width="214dp"
+			android:layout_height="214dp"
+			android:background="@drawable/background_button_vpn_shape_alpha"
+			android:alpha="0.5"
+
+			app:layout_constraintBottom_toBottomOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintEnd_toEndOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintLeft_toLeftOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintRight_toRightOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintStart_toStartOf="@+id/backgroundbuttonvpn"
+			app:layout_constraintTop_toTopOf="@+id/backgroundbuttonvpn" />
+
+
+
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

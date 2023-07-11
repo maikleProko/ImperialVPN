@@ -1,0 +1,303 @@
+
+i
+java:S1192Æ"RDefine a constant instead of duplicating this literal "verify-x509-name " 4 times.(º¨ÕŞ
+h
+java:S1192à"LDefine a constant instead of duplicating this literal "CERTIFICATE" 3 times.(Ûúª—ùÿÿÿÿ
+l
+java:S1192©"PDefine a constant instead of duplicating this literal "auth-user-pass
+" 4 times.(ƒÛ¥×ùÿÿÿÿ
+K
+java:S1066Î"/Merge this if statement with the enclosing one.(çã¯úşÿÿÿÿ
+F
+java:S1066İ"/Merge this if statement with the enclosing one.(ÃÑÄı
+F
+java:S1066˜"/Merge this if statement with the enclosing one.(ÓíûÑ
+K
+java:S1066¶"/Merge this if statement with the enclosing one.(õ“ğ¥üÿÿÿÿ
+F
+java:S1066¾"/Merge this if statement with the enclosing one.(úó£ë
+F
+java:S1066Ã"/Merge this if statement with the enclosing one.(Á¸ô”
+F
+java:S1066È"/Merge this if statement with the enclosing one.(¢å—š
+F
+java:S1066É"/Merge this if statement with the enclosing one.(Ë«ªÑ
+ƒ
+java:S1319"lThe type of "mAllowedAppsVpn" should be an interface such as "Set" rather than the implementation "HashSet".(öèä¾
+Q
+java:S1141é"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+l	java:S117ğ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş¿”àşÿÿÿÿ
+l	java:S117•	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş¿”àşÿÿÿÿ
+?
+java:S1604Œ"(Make this anonymous inner class a lambda(ÉãÃ®
+3
+java:S1643’"Use a StringBuilder instead.(¨óóå
+8
+java:S1643–"Use a StringBuilder instead.(¹œ ûÿÿÿÿ
+3
+java:S1643Ÿ"Use a StringBuilder instead.(œ¤Â†
+3
+java:S1643¬"Use a StringBuilder instead.(³›§Œ
+z
+java:S1488ë"^Immediately return this expression instead of assigning it to the temporary variable "intent".(İìÖ¨ÿÿÿÿÿ
+v
+java:S1488¸"_Immediately return this expression instead of assigning it to the temporary variable "caChain".(ÊÁ•ä
+s
+java:S1104U"XMake DEFAULT_DNS1 a static final constant or non-public and provide accessors if needed.(‘ªì¯ÿÿÿÿÿ
+s
+java:S1104V"XMake DEFAULT_DNS2 a static final constant or non-public and provide accessors if needed.(­¢Äıÿÿÿÿ
+p
+java:S1104Z"ZMake profileDeleted a static final constant or non-public and provide accessors if needed.(Şó™•
+z
+java:S1104["_Make mAuthenticationType a static final constant or non-public and provide accessors if needed.(²êĞ—úÿÿÿÿ
+l
+java:S1104\"QMake mName a static final constant or non-public and provide accessors if needed.(ÓµÛùÿÿÿÿÿ
+f
+java:S1104]"RMake mAlias a static final constant or non-public and provide accessors if needed.(¹¨a
+z
+java:S1104^"_Make mClientCertFilename a static final constant or non-public and provide accessors if needed.(³Ô•Ñüÿÿÿÿ
+s
+java:S1104_"]Make mTLSAuthDirection a static final constant or non-public and provide accessors if needed.(Ğ«á„
+r
+java:S1104`"\Make mTLSAuthFilename a static final constant or non-public and provide accessors if needed.(ø¨İÃ
+y
+java:S1104a"^Make mClientKeyFilename a static final constant or non-public and provide accessors if needed.(ıÓàúÿÿÿÿ
+l
+java:S1104b"WMake mCaFilename a static final constant or non-public and provide accessors if needed.(òºw
+i
+java:S1104c"SMake mUseLzo a static final constant or non-public and provide accessors if needed.(øÔê—
+q
+java:S1104d"[Make mPKCS12Filename a static final constant or non-public and provide accessors if needed.(·Çöì
+q
+java:S1104e"[Make mPKCS12Password a static final constant or non-public and provide accessors if needed.(òêß¶
+r
+java:S1104f"WMake mUseTLSAuth a static final constant or non-public and provide accessors if needed.(ş¬Ãƒûÿÿÿÿ
+g
+java:S1104g"QMake mDNS1 a static final constant or non-public and provide accessors if needed.(õò¬‹
+l
+java:S1104h"QMake mDNS2 a static final constant or non-public and provide accessors if needed.(¯×‰Øÿÿÿÿÿ
+n
+java:S1104i"XMake mIPv4Address a static final constant or non-public and provide accessors if needed.(ÿ¬öÿ
+s
+java:S1104j"XMake mIPv6Address a static final constant or non-public and provide accessors if needed.(Ûªô×ùÿÿÿÿ
+n
+java:S1104k"XMake mOverrideDNS a static final constant or non-public and provide accessors if needed.(óµ™†
+t
+java:S1104l"YMake mSearchDomain a static final constant or non-public and provide accessors if needed.(Íµªáùÿÿÿÿ
+w
+java:S1104m"\Make mUseDefaultRoute a static final constant or non-public and provide accessors if needed.(ÏÚÉãÿÿÿÿÿ
+j
+java:S1104n"TMake mUsePull a static final constant or non-public and provide accessors if needed.(ïğ…¶
+t
+java:S1104o"YMake mCustomRoutes a static final constant or non-public and provide accessors if needed.(ÜÖºÎûÿÿÿÿ
+p
+java:S1104p"ZMake mCheckRemoteCN a static final constant or non-public and provide accessors if needed.(Šñ¾
+p
+java:S1104q"ZMake mExpectTLSCert a static final constant or non-public and provide accessors if needed.(óéÔÎ
+p
+java:S1104r"UMake mRemoteCN a static final constant or non-public and provide accessors if needed.(ï¼€ëÿÿÿÿÿ
+p
+java:S1104s"UMake mPassword a static final constant or non-public and provide accessors if needed.(ƒÛÍ‘üÿÿÿÿ
+k
+java:S1104t"UMake mUsername a static final constant or non-public and provide accessors if needed.(®¦éÂ
+n
+java:S1104u"XMake mRoutenopull a static final constant or non-public and provide accessors if needed.(Š»™
+t
+java:S1104v"^Make mUseRandomHostname a static final constant or non-public and provide accessors if needed.(ºÁ¿À
+k
+java:S1104w"UMake mUseFloat a static final constant or non-public and provide accessors if needed.(†’şÉ
+r
+java:S1104x"\Make mUseCustomConfig a static final constant or non-public and provide accessors if needed.(ö¾ÿ±
+u
+java:S1104y"`Make mCustomConfigOptions a static final constant or non-public and provide accessors if needed.(è°…7
+l
+java:S1104z"QMake mVerb a static final constant or non-public and provide accessors if needed.(„õ­¤úÿÿÿÿ
+n
+java:S1104{"SMake mCipher a static final constant or non-public and provide accessors if needed.(ŒíÈîÿÿÿÿÿ
+n
+java:S1104|"SMake mNobind a static final constant or non-public and provide accessors if needed.(½ù¾şÿÿÿÿ
+y
+java:S1104}"^Make mUseDefaultRoutev6 a static final constant or non-public and provide accessors if needed.(©Ãüÿÿÿÿ
+v
+java:S1104~"[Make mCustomRoutesv6 a static final constant or non-public and provide accessors if needed.(Ï„¦‚øÿÿÿÿ
+s
+java:S1104"XMake mKeyPassword a static final constant or non-public and provide accessors if needed.(èºğùÿÿÿÿ
+s
+java:S1104€"WMake mPersistTun a static final constant or non-public and provide accessors if needed.(Èö¥Òùÿÿÿÿ
+x
+java:S1104"\Make mConnectRetryMax a static final constant or non-public and provide accessors if needed.(Ä¥è’ùÿÿÿÿ
+u
+java:S1104‚"YMake mConnectRetry a static final constant or non-public and provide accessors if needed.(úĞÕ¥ıÿÿÿÿ
+w
+java:S1104ƒ"`Make mConnectRetryMaxTime a static final constant or non-public and provide accessors if needed.(ÅÀ”Ğ
+p
+java:S1104„"YMake mUserEditable a static final constant or non-public and provide accessors if needed.(šà
+h
+java:S1104…"QMake mAuth a static final constant or non-public and provide accessors if needed.(§°¾÷
+u
+java:S1104†"YMake mX509AuthType a static final constant or non-public and provide accessors if needed.(®ÛÒçùÿÿÿÿ
+u
+java:S1104‡"^Make mx509UsernameField a static final constant or non-public and provide accessors if needed.(Ô‚ª
+q
+java:S1104ˆ"ZMake mAllowLocalLAN a static final constant or non-public and provide accessors if needed.(øöó
+w
+java:S1104‰"[Make mExcludedRoutes a static final constant or non-public and provide accessors if needed.(ú¥şØøÿÿÿÿ
+s
+java:S1104Š"]Make mExcludedRoutesv6 a static final constant or non-public and provide accessors if needed.(Åì‘]
+i
+java:S1104‹"SMake mMssFix a static final constant or non-public and provide accessors if needed.(˜ÄÔ
+o
+java:S1104Œ"XMake mConnections a static final constant or non-public and provide accessors if needed.(ÊòÍ
+u
+java:S1104"YMake mRemoteRandom a static final constant or non-public and provide accessors if needed.(Çœùÿÿÿÿ
+r
+java:S1104"[Make mAllowedAppsVpn a static final constant or non-public and provide accessors if needed.(öèä¾
+„
+java:S1104"hMake mAllowedAppsVpnAreDisallowed a static final constant or non-public and provide accessors if needed.(„úşºøÿÿÿÿ
+z
+java:S1104"^Make mAllowAppVpnBypass a static final constant or non-public and provide accessors if needed.(»¤Ã¸ıÿÿÿÿ
+t
+java:S1104‘"XMake mCrlFilename a static final constant or non-public and provide accessors if needed.(»³ıáûÿÿÿÿ
+r
+java:S1104’"[Make mProfileCreator a static final constant or non-public and provide accessors if needed.(¨øç
+~
+java:S1104“"bMake mExternalAuthenticator a static final constant or non-public and provide accessors if needed.(Æ×èÊşÿÿÿÿ
+m
+java:S1104”"VMake mAuthRetry a static final constant or non-public and provide accessors if needed.(â‘ªá
+j
+java:S1104•"SMake mTunMtu a static final constant or non-public and provide accessors if needed.(šüú
+p
+java:S1104–"YMake mPushPeerInfo a static final constant or non-public and provide accessors if needed.(ö¡êò
+k
+java:S1104—"TMake mVersion a static final constant or non-public and provide accessors if needed.(Ô‹öÒ
+q
+java:S1104™"UMake mLastUsed a static final constant or non-public and provide accessors if needed.(¨¤©‰ùÿÿÿÿ
+{
+java:S1104š"_Make importedProfileHash a static final constant or non-public and provide accessors if needed.(ˆúåóûÿÿÿÿ
+n
+java:S1104œ"WMake mServerName a static final constant or non-public and provide accessors if needed.(àôı
+s
+java:S1104"WMake mServerPort a static final constant or non-public and provide accessors if needed.(ƒ³ô’ûÿÿÿÿ
+j
+java:S1104"SMake mUseUdp a static final constant or non-public and provide accessors if needed.(è–éœ
+y
+java:S1104Ÿ"]Make mTemporaryProfile a static final constant or non-public and provide accessors if needed.(½€ìÿÿÿÿÿ
+ƒ
+java:S1104¦"gMake mBlockUnusedAddressFamilies a static final constant or non-public and provide accessors if needed.(Í‚´®øÿÿÿÿ
+M
+java:S1444U"2Make this "public static DEFAULT_DNS1" field final(‘ªì¯ÿÿÿÿÿ
+M
+java:S1444V"2Make this "public static DEFAULT_DNS2" field final(­¢Äıÿÿÿÿ
+a
+java:S21849"FCast one of the operands of this multiplication operation to a "long".(«°Á¤ùÿÿÿÿ
+_
+java:S2095÷"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(ê½ †
+_
+java:S2095©"HUse try-with-resources or close this "FileReader" in a "finally" clause.(³–¨¶
+t	java:S115Q"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(üŸÎçùÿÿÿÿ
+r
+java:S3008U"WRename this field "DEFAULT_DNS1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ªì¯ÿÿÿÿÿ
+r
+java:S3008V"WRename this field "DEFAULT_DNS2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­¢Äıÿÿÿÿ
+˜
+java:S1186¯"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Æºˆ¶
+g
+java:S1206ê"PThis class overrides "equals()" and should therefore also override "hashCode()".(ÜÑã
+
+java:S1149¯"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(çÁØÿùÿÿÿÿ
+
+java:S1149Â"eReplace the synchronized class "Vector" by an unsynchronized one such as "ArrayList" or "LinkedList".(çÁØÿùÿÿÿÿ
+`
+java:S11249"EReorder the modifiers to comply with the Java Language Specification.(«°Á¤ùÿÿÿÿ
+?
+java:S1172Á"(Remove this unused method parameter "c".(ï›³
+m
+java:S3457É"Q%n should be used in place of \n to produce the platform-specific line separator.(ÃÏÍ¹úÿÿÿÿ
+h
+java:S3457Ì"Q%n should be used in place of \n to produce the platform-specific line separator.(½ºù
+m
+java:S3457Î"Q%n should be used in place of \n to produce the platform-specific line separator.(÷•’øşÿÿÿÿ
+X
+java:S1126ã"AReplace this if-then-else statement by a single return statement.(šİâù
+a	java:S128­"LEnd this switch case with an unconditional break, return or throw statement.(ÒñŠ{
+a	java:S128©"LEnd this switch case with an unconditional break, return or throw statement.(û¿4
+g	java:S128¥"LEnd this switch case with an unconditional break, return or throw statement.(ÌÊëÎüÿÿÿÿ
+g	java:S128›"LEnd this switch case with an unconditional break, return or throw statement.(‰ÆÄÎşÿÿÿÿ
+g	java:S128—"LEnd this switch case with an unconditional break, return or throw statement.(ªëÅŞúÿÿÿÿ
+j
+java:S3776Ä"SRefactor this method to reduce its Cognitive Complexity from 140 to the 15 allowed.(º„ˆÆ
+W	java:S125Ó"<This block of commented-out lines of code should be removed.(¥¹øãÿÿÿÿÿ
+h
+java:S3457×"Q%n should be used in place of \n to produce the platform-specific line separator.(åâğ²
+h
+java:S3457Ú"Q%n should be used in place of \n to produce the platform-specific line separator.(†ïÑ±
+W	java:S125ó"<This block of commented-out lines of code should be removed.(£×°âûÿÿÿÿ
+b	java:S128¾"LEnd this switch case with an unconditional break, return or throw statement.(‘êÆ¢
+g	java:S128³"LEnd this switch case with an unconditional break, return or throw statement.(öÒÌÙüÿÿÿÿ
+g	java:S128¨"LEnd this switch case with an unconditional break, return or throw statement.(›ÎÍíşÿÿÿÿ
+=	java:S131§""Add a default case to this switch.(‡‘¢ûùÿÿÿÿ
+m
+java:S3457³"Q%n should be used in place of \n to produce the platform-specific line separator.(™“€‡ùÿÿÿÿ
+h
+java:S3457µ"Q%n should be used in place of \n to produce the platform-specific line separator.(„Ø½õ
+m
+java:S3457»"Q%n should be used in place of \n to produce the platform-specific line separator.(¦‰Îùÿÿÿÿ
+g	java:S128Ë"LEnd this switch case with an unconditional break, return or throw statement.(æº£¡ùÿÿÿÿ
+8	java:S131È""Add a default case to this switch.(È¿ô“
+\
+java:S1124¡"EReorder the modifiers to comply with the Java Language Specification.(åØ¸…
+R	java:S125î"<This block of commented-out lines of code should be removed.(ş”È
+N
+java:S1135í"2Complete the task associated to this TODO comment.(À’´‚üÿÿÿÿ
+o
+java:S2975—"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(¤„ŸÎúÿÿÿÿ
+i
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ğùş±
+u
+java:S2142‘"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(®¶·ß
+:
+java:S1659‡"#Declare "extra" on a separate line.(ÈØÅ•
+A
+java:S1197Ï"*Move the array designators [] to the type.(Ÿ¢¦
+=
+java:S1168œ"&Return an empty array instead of null.(¥¹ï
+=
+java:S1168 "&Return an empty array instead of null.(¥¹ï
+u
+java:S2142¤"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‘í†
+Z
+java:S2276£"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(öÍËè
+n
+java:S3776±"RRefactor this method to reduce its Cognitive Complexity from 56 to the 15 allowed.(¹ôÄŸøÿÿÿÿ
+Z
+java:S1155Â">Use isEmpty() to check whether the collection is empty or not.(•ÎÜÔşÿÿÿÿ
+Z
+java:S1155Å">Use isEmpty() to check whether the collection is empty or not.(Ìá¬½øÿÿÿÿ
+]
+java:S2147²"FCombine this catch with the one at line 1072, which has the same body.(ï­£Ä
+X
+java:S1126º"AReplace this if-then-else statement by a single return statement.(Ó´›œ
+n
+java:S3776À"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ûÛúšşÿÿÿÿ
+=
+java:S1168ş"&Return an empty array instead of null.(¥¹ï
+z
+java:S2142	"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ÁÌò†ùÿÿÿÿ
+=
+java:S1168ƒ	"&Return an empty array instead of null.(¥¹ï
+3
+java:S5542£	"Use a secure padding scheme.(Ã†€ô
+3
+java:S5542¥	"Use a secure padding scheme.(ÊÿİÄ
+=
+java:S1168°	"&Return an empty array instead of null.(¥¹ï
+H
+java:S3011·	",This accessibility update should be removed.(å¦²øÿÿÿÿÿ
+C
+java:S3011Á	",This accessibility update should be removed.(œ¹õç
+=
+java:S1168Ê	"&Return an empty array instead of null.(¥¹ï
+S
+java:S1068S"8Remove this unused "AUTH_RETRY_NONE_KEEP" private field.(šöğùÿÿÿÿ
+M
+java:S1068T"7Remove this unused "AUTH_RETRY_INTERACT" private field.(šÃ

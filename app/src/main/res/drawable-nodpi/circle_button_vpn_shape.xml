@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- circlebuttonvpn from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="oval" >
+	<stroke android:color="#ffffff" android:width="7dp" />
+	<solid android:color="@color/background_button_vpn_color" />
+</shape>
+

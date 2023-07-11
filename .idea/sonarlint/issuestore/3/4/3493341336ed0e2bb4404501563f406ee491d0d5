@@ -1,0 +1,78 @@
+
+p
+java:S2293‚"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÅâÏ
+u
+java:S2293Ç"YReplace the type specification in this constructor call with the diamond operator ("<>").(€»ƒ²ıÿÿÿÿ
+u
+java:S2293Ó"YReplace the type specification in this constructor call with the diamond operator ("<>").(½¦Öİûÿÿÿÿ
+u
+java:S2293…"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜È‡Óÿÿÿÿÿ
+u
+java:S2293Ï"YReplace the type specification in this constructor call with the diamond operator ("<>").(°ş¦Ñûÿÿÿÿ
+]
+java:S1192\"GDefine a constant instead of duplicating this literal "setenv" 5 times.(¤•ËÂ
+g
+java:S1192z"LDefine a constant instead of duplicating this literal "socks-proxy" 3 times.(ÒÅÈâÿÿÿÿÿ
+t	java:S135¡"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ
+F
+java:S1066Ä"/Merge this if statement with the enclosing one.(ÿú¯ó
+F
+java:S1066ì"/Merge this if statement with the enclosing one.(…©¼‡
+3
+java:S1643é"Use a StringBuilder instead.(½å×ş
+8
+java:S1643ê"Use a StringBuilder instead.(Ş×“ìÿÿÿÿÿ
+8
+java:S1643Í"Use a StringBuilder instead.(€ÛÃ–øÿÿÿÿ
+3
+java:S1643ş"Use a StringBuilder instead.(ÌÊ…
+3
+java:S1643€"Use a StringBuilder instead.(‡Òó´
+8
+java:S1643’"Use a StringBuilder instead.(¹¨üÿÿÿÿ
+8
+java:S1643Ã"Use a StringBuilder instead.(³è±úÿÿÿÿ
+3
+java:S1643§"Use a StringBuilder instead.(ûâÖ×
+8
+java:S1643É"Use a StringBuilder instead.(ß½şØıÿÿÿÿ
+8
+java:S1643Ì"Use a StringBuilder instead.(–¯¬‘ùÿÿÿÿ
+3
+java:S1643Í"Use a StringBuilder instead.(ì¡Ùï
+s
+java:S1488ø"\Immediately return this expression instead of assigning it to the temporary variable "conn".(­ñø˜
+y	java:S116ƒ"^Rename this field "auth_user_pass_file" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í™€›ÿÿÿÿÿ
+\
+java:S1124…"EReorder the modifiers to comply with the Java Language Specification.(Ä®§
+\
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Ö‚Î
+i
+java:S3776˜"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¹İıï
+U
+java:S1155¹">Use isEmpty() to check whether the collection is empty or not.(ıœÚ
+U
+java:S1117Ñ"9Rename "meta" which hides the field declared at line 130.(¿Äœÿÿÿÿÿ
+i
+java:S3776„"RRefactor this method to reduce its Cognitive Complexity from 65 to the 15 allowed.(×›Úã
+R	java:S125¼"<This block of commented-out lines of code should be removed.(¨ª›
+o
+java:S3776Ö"SRefactor this method to reduce its Cognitive Complexity from 170 to the 15 allowed.(ø•³Šıÿÿÿÿ
+a
+java:S2147ƒ"ECombine this catch with the one at line 385, which has the same body.(à¿íúÿÿÿÿ
+M
+java:S5261ÿ"1Add explicit curly braces to avoid dangling else.(„¶áìøÿÿÿÿ
+n
+java:S3776ı"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(ØÅ²üÿÿÿÿ
+g	java:S128Ş"LEnd this switch case with an unconditional break, return or throw statement.(‰ÆÄÎşÿÿÿÿ
+g	java:S128Ü"LEnd this switch case with an unconditional break, return or throw statement.(µ»ïşıÿÿÿÿ
+=	java:S131Û""Add a default case to this switch.(„Îıÿÿÿÿ
+B
+java:S1168İ"+Return an empty collection instead of null.(¥¹ï
+B
+java:S1168å"+Return an empty collection instead of null.(¥¹ï
+p	java:S115ó"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ñ¢å’
+p	java:S115ô"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Èí©Æ
+p	java:S115ô"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Èí©Æ
+p	java:S115ô"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Èí©Æ
+p	java:S115ô"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Èí©Æ

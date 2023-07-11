@@ -1,0 +1,37 @@
+
+m
+java:S1104"WMake mServerName a static final constant or non-public and provide accessors if needed.(àôı
+r
+java:S1104"WMake mServerPort a static final constant or non-public and provide accessors if needed.(ƒ³ô’ûÿÿÿÿ
+i
+java:S1104"SMake mUseUdp a static final constant or non-public and provide accessors if needed.(è–éœ
+v
+java:S1104"`Make mCustomConfiguration a static final constant or non-public and provide accessors if needed.(ı¤ôŠ
+r
+java:S1104"\Make mUseCustomConfig a static final constant or non-public and provide accessors if needed.(ö¾ÿ±
+j
+java:S1104"TMake mEnabled a static final constant or non-public and provide accessors if needed.(ç½ÙÈ
+q
+java:S1104"[Make mConnectTimeout a static final constant or non-public and provide accessors if needed.(Êùà
+l
+java:S1104"VMake mProxyType a static final constant or non-public and provide accessors if needed.(Û„•
+l
+java:S1104"VMake mProxyName a static final constant or non-public and provide accessors if needed.(ùËóş
+l
+java:S1104"VMake mProxyPort a static final constant or non-public and provide accessors if needed.(ĞÊ§
+t
+java:S1104"YMake mUseProxyAuth a static final constant or non-public and provide accessors if needed.(´ÕÓçúÿÿÿÿ
+p
+java:S1104"ZMake mProxyAuthUser a static final constant or non-public and provide accessors if needed.(¢ü‚î
+t
+java:S1104"^Make mProxyAuthPassword a static final constant or non-public and provide accessors if needed.(¦ñëì
+l
+java:S34576"Q%n should be used in place of \n to produce the platform-specific line separator.(±¿¯çüÿÿÿÿ
+g
+java:S3457;"Q%n should be used in place of \n to produce the platform-specific line separator.(ÚÚÑŒ
+l
+java:S3457="Q%n should be used in place of \n to produce the platform-specific line separator.(İ¬Éüÿÿÿÿ
+l
+java:S3457@"Q%n should be used in place of \n to produce the platform-specific line separator.(˜¬ªØşÿÿÿÿ
+h
+java:S2975R"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ö‰Š7

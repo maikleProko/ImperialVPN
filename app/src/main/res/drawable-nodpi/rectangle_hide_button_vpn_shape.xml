@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rectanglehidebuttonvpn from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="rectangle"
+	>
+	<solid android:color="@color/background_button_vpn_color" />
+</shape>
+

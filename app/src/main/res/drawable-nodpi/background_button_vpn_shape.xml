@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- backgroundbuttonvpn from your XD file. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+	android:shape="oval" >
+	<stroke android:color="@color/stroke_background" android:width="4dp" />
+	<!--	<gradient android:startColor="@color/background_button_vpn_color" android:endColor="@color/black"  android:type="radial" android:gradientRadius="500dp"/>-->
+    	<solid android:color="@color/background_button_vpn_color" />
+</shape>
+
