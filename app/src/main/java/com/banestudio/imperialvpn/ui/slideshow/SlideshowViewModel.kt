@@ -1,19 +1,17 @@
-package com.banestudio.imperialvpn.ui.slideshow;
+package com.banestudio.imperialvpn.ui.slideshow
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-public class SlideshowViewModel extends ViewModel {
+class SlideshowViewModel : ViewModel() {
+    private val mText: MutableLiveData<String?>
 
-    private final MutableLiveData<String> mText;
-
-    public SlideshowViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+    init {
+        mText = MutableLiveData()
+        mText.value = "This is slideshow fragment"
     }
 
-    public LiveData<String> getText() {
-        return mText;
-    }
+    val text: LiveData<String?>
+        get() = mText
 }

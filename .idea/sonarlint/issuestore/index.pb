@@ -7,12 +7,6 @@ s
 Capp/src/main/java/com/ramotion/directselect/DSDefaultPickerBox.java,0\9\09416086068354a97464622a1c73c57e9e0689a2
 t
 Dapp/src/main/java/com/ramotion/directselect/DSAbstractPickerBox.java,c\d\cdc1b6dcab1241096518dbdc4599d488887ab14d
-S
-#vpnLib/src/main/AndroidManifest.xml,6\9\69c218896cf5ce62fabd6a573c051d4dfd5ce959
-I
-vpnLib/proguard-rules.pro,e\c\ecf23cc2937f7b52a3a93ca3592ab253716afb97
-F
-app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 j
 :vpnLib/src/main/java/de/blinkt/openvpn/core/VpnStatus.java,d\e\de4899465df810bffb8dcb41e5ad602599c18121
 o
@@ -27,10 +21,6 @@ f
 6vpnLib/src/main/java/de/blinkt/openvpn/VpnProfile.java,7\a\7a0d8d246f6213969dba6382288205be71e33210
 |
 Lapp/src/main/java/com/banestudio/imperialvpn/ui/home/TextNotificationView.kt,7\f\7f5092dc330f76018de99a1876a3214e8a655879
-u
-Eapp/src/main/java/com/banestudio/imperialvpn/ui/home/HomeViewModel.kt,8\a\8a9e75b84d3dd05c9c8a5ef7c7bd0711cecc7cf0
-t
-Dapp/src/main/java/com/banestudio/imperialvpn/ui/home/HomeFragment.kt,3\5\35206f99e0217743cf120507cfb0caeddfc496f8
 n
 >app/src/main/java/com/banestudio/imperialvpn/ui/home/Server.kt,1\0\1048d731f80ea0f19fe57179f0eef5b97f22f95f
 s

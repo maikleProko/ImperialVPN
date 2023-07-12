@@ -1,17 +1,9 @@
-package com.banestudio.imperialvpn.ui.home.buttonvpn;
-import android.view.View;
-import android.widget.TextView;
+package com.banestudio.imperialvpn.ui.home.buttonvpn
 
-import com.banestudio.imperialvpn.R;
+import android.widget.TextView
 
-public class TextNotificationView {
-    private TextView textView;
-    public TextNotificationView(TextView textView) {
-        this.textView = textView;
+class TextNotificationView(private val textView: TextView) {
+    fun setText(text: String?) {
+        textView.text = text
     }
-
-    public void setText(String text) {
-        textView.setText(text);
-    }
-
 }

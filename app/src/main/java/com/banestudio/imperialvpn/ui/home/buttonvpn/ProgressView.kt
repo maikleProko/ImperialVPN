@@ -1,32 +1,29 @@
-package com.banestudio.imperialvpn.ui.home.buttonvpn;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
+package com.banestudio.imperialvpn.ui.home.buttonvpn
 
-public class ProgressView {
-    private float currentScale = 0;
-    private View view;
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.ScaleAnimation
 
-    public ProgressView(View view) {
-        this.view = view;
-        view.setScaleX(0);
-        view.setScaleY(0);
+class ProgressView(private val view: View) {
+    private var currentScale = 0f
+
+    init {
+        view.scaleX = 0f
+        view.scaleY = 0f
     }
 
-    public void setProgress(float value, int duration) {
-        view.setScaleX(1);
-        view.setScaleY(1);
-        ScaleAnimation animation = new ScaleAnimation(
-                currentScale, value,
-                currentScale, value,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f
-        );
-
-        animation.setFillAfter(true);
-        animation.setDuration(duration);
-        view.startAnimation(animation);
-        currentScale = value;
+    fun setProgress(value: Float, duration: Int) {
+        view.scaleX = 1f
+        view.scaleY = 1f
+        val animation = ScaleAnimation(
+            currentScale, value,
+            currentScale, value,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.5f
+        )
+        animation.fillAfter = true
+        animation.duration = duration.toLong()
+        view.startAnimation(animation)
+        currentScale = value
     }
-
 }

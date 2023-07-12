@@ -1,99 +1,91 @@
-package com.banestudio.imperialvpn.ui.home;
+package com.banestudio.imperialvpn.ui.home
 
-import static android.app.Activity.RESULT_OK;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
+import android.os.Handler
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.banestudio.imperialvpn.R
+import com.banestudio.imperialvpn.databinding.FragmentHomeBinding
+import com.banestudio.imperialvpn.databinding.UpperButtonBinding
+import com.banestudio.imperialvpn.ui.home.buttonvpn.ButtonVpnView
+import com.banestudio.imperialvpn.ui.home.buttonvpn.ProgressView
+import com.banestudio.imperialvpn.ui.home.buttonvpn.TextNotificationView
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
-import com.banestudio.imperialvpn.R;
-import com.banestudio.imperialvpn.databinding.FragmentHomeBinding;
-import com.banestudio.imperialvpn.databinding.UpperButtonBinding;
-import com.banestudio.imperialvpn.ui.home.buttonvpn.ButtonVpnView;
-import com.banestudio.imperialvpn.ui.home.buttonvpn.ProgressView;
-import com.banestudio.imperialvpn.ui.home.buttonvpn.TextNotificationView;
-
-public class HomeFragment extends Fragment {
-
-
-    private FragmentHomeBinding binding;
-    private ButtonVpnView buttonVpnView;
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        buttonVpnView = new ButtonVpnView(
-            binding.buttonVpn,
-            new ProgressView(binding.buttonVpn.circleloadingsize),
-            new TextNotificationView(binding.textNotification),
-            binding.dsCountryPicker,
+class HomeFragment : Fragment() {
+    private var binding: FragmentHomeBinding? = null
+    private var buttonVpnView: ButtonVpnView? = null
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val root: View = binding!!.root
+        buttonVpnView = ButtonVpnView(
+            binding!!.buttonVpn,
+            ProgressView(binding!!.buttonVpn.circleloadingsize),
+            TextNotificationView(binding!!.textNotification),  //binding.dsCountryPicker,
             requireContext(),
             requireActivity(),
             this
-        );
-
-        initialization();
-        return root;
+        )
+        initialization()
+        return root
     }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
-    private void initialization() {
-        setUpperButton(binding.upperUploadButton, R.drawable.icon_upload_circle, getString(R.string.upload));
-        setUpperButton(binding.upperDownloadButton, R.drawable.icon_download_circle, getString(R.string.download));
+    private fun initialization() {
+        setUpperButton(
+            binding!!.upperUploadButton,
+            R.drawable.icon_upload_circle,
+            getString(R.string.upload)
+        )
+        setUpperButton(
+            binding!!.upperDownloadButton,
+            R.drawable.icon_download_circle,
+            getString(R.string.download)
+        )
     }
 
-    private void setUpperButton(UpperButtonBinding upperButtonBinding, int image, String title) {
-        upperButtonBinding.iconUpperButton.setImageResource(image);
-        upperButtonBinding.titleUpperButton.setText(title);
+    private fun setUpperButton(upperButtonBinding: UpperButtonBinding, image: Int, title: String) {
+        upperButtonBinding.iconUpperButton.setImageResource(image)
+        upperButtonBinding.titleUpperButton.text = title
     }
 
-    private void setSpeedUpperButton(UpperButtonBinding upperButtonBinding, int value) {
-
-        upperButtonBinding.speedUpperButton.setText(value + getString(R.string.speed_kb_current));
+    private fun setSpeedUpperButton(upperButtonBinding: UpperButtonBinding, value: Int) {
+        upperButtonBinding.speedUpperButton.text =
+            value.toString() + getString(R.string.speed_kb_current)
     }
 
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            buttonVpnView.startVPN();
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            buttonVpnView!!.startVPN()
         }
     }
 
-    private final Handler mHandler = new Handler();
-    private final Runnable mRunnable = new Runnable() {
-        @Override
-        public void run() {
-            buttonVpnView.updateProgressVPNConnection();
-            mHandler.postDelayed(this, 1000);
+    private val mHandler = Handler()
+    private val mRunnable: Runnable = object : Runnable {
+        override fun run() {
+            buttonVpnView!!.updateProgressVPNConnection()
+            mHandler.postDelayed(this, 1000)
         }
-    };
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mHandler.postDelayed(mRunnable, 1000);
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        mHandler.removeCallbacks(mRunnable);
+    override fun onResume() {
+        super.onResume()
+        mHandler.postDelayed(mRunnable, 1000)
     }
 
+    override fun onPause() {
+        super.onPause()
+        mHandler.removeCallbacks(mRunnable)
+    }
 }

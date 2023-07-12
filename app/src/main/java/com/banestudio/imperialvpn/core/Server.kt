@@ -1,39 +1,28 @@
-package com.banestudio.imperialvpn.core;
+package com.banestudio.imperialvpn.core
 
-public class Server {
-    private String country;
-    private String ovpn;
-    private String ovpnUserName;
-    private String ovpnUserPassword;
-    private String ovpnVersion;
+class Server {
+    var country: String? = null
 
-    public String getCountry() {
-        return country;
-    }
-    public String getOvpn() {
-        return ovpn;
-    }
-    public String getOvpnUserName() {
-        return ovpnUserName;
-    }
-    public String getOvpnUserPassword() {
-        return ovpnUserPassword;
-    }
-
-    public void set(String value) {
-        String[] params = value.split("\\|");
-        this.ovpnUserName = params[0];
-        this.ovpnUserPassword = params[1];
-        this.country = params[2];
-        this.ovpn = this.country + ".ovpn";
-        this.ovpnVersion = params[3];
+    var ovpn: String? = null
+        private set
+    var ovpnUserName: String? = null
+        private set
+    var ovpnUserPassword: String? = null
+        private set
+    private var ovpnVersion: String? = null
+    fun set(value: String) {
+        val params = value.split("\\|".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        ovpnUserName = params[0]
+        ovpnUserPassword = params[1]
+        country = params[2]
+        ovpn = country + ".ovpn"
+        ovpnVersion = params[3]
     }
 
-    public void initTestServer() {
-        this.ovpnUserName = "freeopenvpn";
-        this.ovpnUserPassword = "839987206";
-        this.ovpn = "USA.ovpn";
-        this.ovpnVersion = "-1";
+    fun initTestServer() {
+        ovpnUserName = "freeopenvpn"
+        ovpnUserPassword = "839987206"
+        ovpn = "USA.ovpn"
+        ovpnVersion = "-1"
     }
-
 }

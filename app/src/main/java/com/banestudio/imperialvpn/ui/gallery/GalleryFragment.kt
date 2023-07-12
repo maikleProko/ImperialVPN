@@ -1,37 +1,33 @@
-package com.banestudio.imperialvpn.ui.gallery;
+package com.banestudio.imperialvpn.ui.gallery
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.banestudio.imperialvpn.databinding.FragmentGalleryBinding
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
-import com.banestudio.imperialvpn.databinding.FragmentGalleryBinding;
-
-public class GalleryFragment extends Fragment {
-
-    private FragmentGalleryBinding binding;
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+class GalleryFragment : Fragment() {
+    private var binding: FragmentGalleryBinding? = null
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        val galleryViewModel = ViewModelProvider(this).get(
+            GalleryViewModel::class.java
+        )
+        binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        val root: View = binding!!.root
+        val textView = binding!!.textGallery
+        galleryViewModel.text.observe(viewLifecycleOwner) { text: CharSequence? ->
+            textView.text = text
+        }
+        return root
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }

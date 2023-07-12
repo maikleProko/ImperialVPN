@@ -1,130 +1,123 @@
-package com.banestudio.imperialvpn.ui.home.buttonvpn;
+package com.banestudio.imperialvpn.ui.home.buttonvpn
 
-import static android.content.Context.CONNECTIVITY_SERVICE;
+import android.app.Activity
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.os.Build
+import android.view.MotionEvent
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import androidx.fragment.app.Fragment
+import com.banestudio.imperialvpn.R
+import com.banestudio.imperialvpn.core.VpnConnection
+import com.banestudio.imperialvpn.databinding.ButtonVpnBinding
 
-import android.app.Activity;
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkCapabilities;
-import android.os.Build;
-import android.view.MotionEvent;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+//import com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox;
+class ButtonVpnView(
+    private val buttonVpnBinding: ButtonVpnBinding,
+    private val progressView: ProgressView,
+    private val textNotificationView: TextNotificationView,  //AdvancedExampleCountryPickerBox advancedExampleCountryPickerBox,
+    private val context: Context,
+    private val activity: Activity,
+    //private final AdvancedExampleCountryPickerBox advancedExampleCountryPickerBox;
+    private val fragment: Fragment
+) {
+    private var fadeIn: Animation? = null
+    private var fadeOut: Animation? = null
+    private val vpnConnection: VpnConnection
 
-import androidx.fragment.app.Fragment;
-
-import com.banestudio.imperialvpn.R;
-import com.banestudio.imperialvpn.core.VpnConnection;
-import com.banestudio.imperialvpn.databinding.ButtonVpnBinding;
-import com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox;
-
-public class ButtonVpnView {
-    private Animation fadeIn;
-    private Animation fadeOut;
-    private final ProgressView progressView;
-    private final TextNotificationView textNotificationView;
-    private final VpnConnection vpnConnection;
-    private final Context context;
-    private final ButtonVpnBinding buttonVpnBinding;
-    private final AdvancedExampleCountryPickerBox advancedExampleCountryPickerBox;
-    private final Fragment fragment;
-    private final Activity activity;
-
-    public ButtonVpnView(
-        ButtonVpnBinding buttonVpnBinding,
-        ProgressView progressView,
-        TextNotificationView textNotificationView,
-        AdvancedExampleCountryPickerBox advancedExampleCountryPickerBox,
-        Context context,
-        Activity activity,
-        Fragment fragment
-    ) {
-        this.buttonVpnBinding = buttonVpnBinding;
-        this.progressView = progressView;
-        this.textNotificationView = textNotificationView;
-        this.advancedExampleCountryPickerBox = advancedExampleCountryPickerBox;
-        this.context = context;
-        this.activity = activity;
-        this.fragment = fragment;
-        vpnConnection = new VpnConnection(context, activity);
-        loadAnimations();
-        setOnTouchListener();
+    init {
+        //this.advancedExampleCountryPickerBox = advancedExampleCountryPickerBox;
+        vpnConnection = VpnConnection(context, activity)
+        loadAnimations()
+        setOnTouchListener()
     }
 
-    private void loadAnimations() {
-        Animation fadeInit = AnimationUtils.loadAnimation(context, R.anim.fade_init);
-        fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
-        fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out);
-        buttonVpnBinding.circlebuttonvpnalpha.startAnimation(fadeInit);
+    private fun loadAnimations() {
+        val fadeInit = AnimationUtils.loadAnimation(
+            context, R.anim.fade_init
+        )
+        fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+        fadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_out)
+        buttonVpnBinding.circlebuttonvpnalpha.startAnimation(fadeInit)
     }
 
-    private void setOnTouchListener() {
-        buttonVpnBinding.circlebuttonvpnalpha.setOnTouchListener((view, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                buttonVpnBinding.circlebuttonvpnalpha.startAnimation(fadeIn);
-            } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                buttonVpnBinding.circlebuttonvpnalpha.startAnimation(fadeOut);
-                startVPN();
+    private fun setOnTouchListener() {
+        buttonVpnBinding.circlebuttonvpnalpha.setOnTouchListener { view: View?, event: MotionEvent ->
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                buttonVpnBinding.circlebuttonvpnalpha.startAnimation(fadeIn)
+            } else if (event.action == MotionEvent.ACTION_UP) {
+                buttonVpnBinding.circlebuttonvpnalpha.startAnimation(fadeOut)
+                startVPN()
             }
-            return true;
-        });
+            true
+        }
     }
 
-    public void startVPN() {
-        vpnConnection.checkRequirementsAndStart(fragment,
-                advancedExampleCountryPickerBox.getText());
+    fun startVPN() {
+        vpnConnection.checkRequirementsAndStart(
+            fragment //, advancedExampleCountryPickerBox.getText()
+        )
     }
 
-    private boolean isAnyVpnConnected(Context context) {
-        ConnectivityManager connectivityManager =
-                (ConnectivityManager) context.getSystemService(CONNECTIVITY_SERVICE);
-        Network[] networks = new Network[0];
+    private fun isAnyVpnConnected(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        var networks = arrayOfNulls<Network>(0)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            networks = connectivityManager.getAllNetworks();
+            networks = connectivityManager.allNetworks
         }
         if (networks == null) {
-            return false;
+            return false
         }
-        for (Network network : networks) {
+        for (network in networks) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(network);
-                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN) &&
-                        !capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_VPN)) {
-                    return true;
+                val capabilities = connectivityManager.getNetworkCapabilities(network)
+                if (capabilities!!.hasTransport(NetworkCapabilities.TRANSPORT_VPN) &&
+                    !capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_VPN)
+                ) {
+                    return true
                 }
             }
         }
-        return false;
+        return false
     }
 
-    private void setProgressVPNConnection(float progress, int duration, String text) {
-        progressView.setProgress(progress, duration);
-        textNotificationView.setText(text);
+    private fun setProgressVPNConnection(progress: Float, duration: Int, text: String) {
+        progressView.setProgress(progress, duration)
+        textNotificationView.setText(text)
     }
 
-    public void updateProgressVPNConnection() {
-        switch (vpnConnection.getStatusVPN()) {
-            case -1:
-                setProgressVPNConnection(0, 0, activity.getString(R.string.notification_default));
-                break;
-            case 0:
-                setProgressVPNConnection(0.3f, 800, activity.getString(R.string.notification_find_servers));
-                break;
-            case 1:
-                setProgressVPNConnection(0.8f, 4000, activity.getString(R.string.notification_connecting) + vpnConnection.getServerCountry());
-                if (this.isAnyVpnConnected(context))
-                    vpnConnection.setStatusVPN(2);
-                break;
-            case 2:
-                setProgressVPNConnection(1f, 800, activity.getString(R.string.notification_connected) + vpnConnection.getServerCountry());
-                break;
-            default:
-                break;
+    fun updateProgressVPNConnection() {
+        when (vpnConnection.getStatusVPN()) {
+            -1 -> setProgressVPNConnection(0f, 0, activity.getString(R.string.notification_default))
+            0 -> setProgressVPNConnection(
+                0.3f,
+                800,
+                activity.getString(R.string.notification_find_servers)
+            )
+            1 -> {
+                setProgressVPNConnection(
+                    0.8f,
+                    4000,
+                    activity.getString(R.string.notification_connecting) + vpnConnection.getServerCountry()
+                )
+                if (isAnyVpnConnected(context)) vpnConnection.setStatusVPN(2)
+            }
+            2 -> setProgressVPNConnection(
+                1f,
+                800,
+                activity.getString(R.string.notification_connected) + vpnConnection.getServerCountry()
+            )
+            else -> {}
         }
     }
 
-    public int getStatusVPN() {
-        return vpnConnection.getStatusVPN();
+
+    fun getStatusVPN(): Int {
+        return vpnConnection.getStatusVPN()
     }
 }
