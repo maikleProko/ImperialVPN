@@ -35,6 +35,8 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
     <!--
     <com.ramotion.directselect.DSListView
         android:id="@+id/ds_county_list"
@@ -66,7 +68,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_app_part"
         app:layout_constraintVertical_bias="0.5">
-        <!--
+
                 <TextView
                     android:id="@+id/text_country"
                     android:layout_width="wrap_content"
@@ -81,19 +83,39 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+        <com.ak.ui.CountryCodePicker
+            android:id="@+id/ccp_phone"
+            android:layout_width="177dp"
+            android:layout_height="53.87dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/ds_bg_picker_box"
+            android:gravity="center"
+            app:contentColor="@color/white"
+            app:defaultNameCode="in"
+            app:fontFamily="@font/rubikregular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_country"
+            app:showArrowDown="true"
+            app:showFlag="true"
+            app:showNameCode="false" />
 
-                <com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox
-                    android:id="@+id/ds_country_picker"
-                    android:layout_width="177dp"
-                    android:layout_height="53.87dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@drawable/ds_bg_picker_box"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_country">
+        <!--app:excludedCountries="ad,ae" -->
+    <!--
+                    <com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox
+                        android:id="@+id/ds_country_picker"
+                        android:layout_width="177dp"
+                        android:layout_height="53.87dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/ds_bg_picker_box"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_country">
 
-                </com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox>
-                -->
+                    </com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox>
+                  -->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -234,7 +256,6 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ds_county_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

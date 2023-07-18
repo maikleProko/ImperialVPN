@@ -21,7 +21,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding!!.root
         buttonVpnView = ButtonVpnView(
@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
             TextNotificationView(binding!!.textNotification),  //binding.dsCountryPicker,
             requireContext(),
             requireActivity(),
+            binding!!.ccpPhone,
             this
         )
         initialization()

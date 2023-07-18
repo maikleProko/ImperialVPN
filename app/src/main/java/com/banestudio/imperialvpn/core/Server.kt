@@ -11,6 +11,7 @@ class Server {
         private set
     private var ovpnVersion: String? = null
     fun set(value: String) {
+        println(value)
         val params = value.split("\\|".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         ovpnUserName = params[0]
         ovpnUserPassword = params[1]

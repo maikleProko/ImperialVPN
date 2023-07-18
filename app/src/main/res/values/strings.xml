@@ -25,8 +25,8 @@
     <string name="app_name">Imperial VPN</string>
     <string name="notification_default">Tap to connect</string>
     <string name="notification_find_servers">Find servers</string>
-    <string name="notification_connecting">Сonnecting to \</string>
-    <string name="notification_connected">Сonnected to \</string>
+    <string name="notification_connecting">"Сonnecting to "</string>
+    <string name="notification_connected">"Сonnected to "</string>
     <string name="location">Location:</string>
     <string name="upload">Upload</string>
     <string name="download">Download</string>

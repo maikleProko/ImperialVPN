@@ -11,27 +11,25 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import com.ak.ui.CountryCodePicker
 import com.banestudio.imperialvpn.R
 import com.banestudio.imperialvpn.core.VpnConnection
 import com.banestudio.imperialvpn.databinding.ButtonVpnBinding
 
-//import com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPickerBox;
 class ButtonVpnView(
     private val buttonVpnBinding: ButtonVpnBinding,
     private val progressView: ProgressView,
-    private val textNotificationView: TextNotificationView,  //AdvancedExampleCountryPickerBox advancedExampleCountryPickerBox,
+    private val textNotificationView: TextNotificationView,
     private val context: Context,
     private val activity: Activity,
-    //private final AdvancedExampleCountryPickerBox advancedExampleCountryPickerBox;
+    private val countryCodePicker: CountryCodePicker,
     private val fragment: Fragment
 ) {
     private var fadeIn: Animation? = null
     private var fadeOut: Animation? = null
-    private val vpnConnection: VpnConnection
+    private val vpnConnection: VpnConnection = VpnConnection(context, activity)
 
     init {
-        //this.advancedExampleCountryPickerBox = advancedExampleCountryPickerBox;
-        vpnConnection = VpnConnection(context, activity)
         loadAnimations()
         setOnTouchListener()
     }
@@ -59,7 +57,7 @@ class ButtonVpnView(
 
     fun startVPN() {
         vpnConnection.checkRequirementsAndStart(
-            fragment //, advancedExampleCountryPickerBox.getText()
+            fragment, countryCodePicker.selectedCountryName()
         )
     }
 
@@ -92,32 +90,33 @@ class ButtonVpnView(
     }
 
     fun updateProgressVPNConnection() {
+        if (isAnyVpnConnected(context)) vpnConnection.setStatusVPN(2)
+        val progress: Float
+        val duration: Int
+        val text: String
+
         when (vpnConnection.getStatusVPN()) {
-            -1 -> setProgressVPNConnection(0f, 0, activity.getString(R.string.notification_default))
-            0 -> setProgressVPNConnection(
-                0.3f,
-                800,
-                activity.getString(R.string.notification_find_servers)
-            )
-            1 -> {
-                setProgressVPNConnection(
-                    0.8f,
-                    4000,
-                    activity.getString(R.string.notification_connecting) + vpnConnection.getServerCountry()
-                )
-                if (isAnyVpnConnected(context)) vpnConnection.setStatusVPN(2)
+            0 -> {
+                progress = 0.3f
+                duration = 800
+                text = activity.getString(R.string.notification_find_servers)
             }
-            2 -> setProgressVPNConnection(
-                1f,
-                800,
-                activity.getString(R.string.notification_connected) + vpnConnection.getServerCountry()
-            )
-            else -> {}
+            1 -> {
+                progress = 0.8f
+                duration = 400
+                text = activity.getString(R.string.notification_connecting) + vpnConnection.getServerCountry()
+            }
+            2 -> {
+                progress = 1f
+                duration = 800
+                text = activity.getString(R.string.notification_connected) + vpnConnection.getServerCountry()
+            }
+            else -> {
+                progress = 0f
+                duration = 0
+                text = activity.getString(R.string.notification_default)
+            }
         }
-    }
-
-
-    fun getStatusVPN(): Int {
-        return vpnConnection.getStatusVPN()
+        setProgressVPNConnection(progress, duration, text)
     }
 }

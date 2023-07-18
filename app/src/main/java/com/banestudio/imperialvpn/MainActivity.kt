@@ -16,6 +16,7 @@ import com.banestudio.imperialvpn.databinding.ActivityMainBinding
 //import com.ramotion.directselect.DSListView;
 //import com.ramotion.directselect.examples.advanced.AdvancedExampleCountryAdapter;
 //import com.ramotion.directselect.examples.advanced.AdvancedExampleCountryPOJO;
+
 class MainActivity : AppCompatActivity() {
     private var mAppBarConfiguration: AppBarConfiguration? = null
     private var binding: ActivityMainBinding? = null
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(this, R.id.nav_host_fragment_content_main)
         setupActionBarWithNavController(this, navController, mAppBarConfiguration!!)
         setupWithNavController(navigationView, navController)
-        //prepareListCountries();
         initButtonOpenDrawerLayout()
     }
 
@@ -48,14 +48,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*
-    private void prepareListCountries() {
-        List<AdvancedExampleCountryPOJO> exampleDataSet = AdvancedExampleCountryPOJO.getExampleDataset();
-        ArrayAdapter<AdvancedExampleCountryPOJO> adapter = new AdvancedExampleCountryAdapter(
-                this, R.layout.advanced_example_country_list_item, exampleDataSet);
-        DSListView<AdvancedExampleCountryPOJO> pickerView = findViewById(R.id.ds_county_list);
-        pickerView.setAdapter(adapter);
-    }*/
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true

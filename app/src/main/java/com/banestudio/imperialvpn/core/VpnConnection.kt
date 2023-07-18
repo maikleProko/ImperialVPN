@@ -1,18 +1,14 @@
 package com.banestudio.imperialvpn.core
-
 import android.app.Activity
-import android.content.ContentValues
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.VpnService
 import android.os.RemoteException
-import android.util.Log
 import androidx.fragment.app.Fragment
-import com.android.volley.Request
-import com.android.volley.VolleyError
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import de.blinkt.openvpn.OpenVpnApi
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
@@ -22,17 +18,18 @@ class VpnConnection(context: Context, activity: Activity) {
     private val server = Server()
     private val context: Context
     private val activity: Activity
-    private val requestText = "Germany"
+    private var requestUrl = ""
+    private var httpHelper: HttpHelper = HttpHelper()
+    private val coroutineScopeREST: CoroutineScope = CoroutineScope(Job())
 
     init {
         server.initTestServer()
         this.context = context
         this.activity = activity
-        Log.d(ContentValues.TAG, context.toString())
     }
 
     private val isConnectedToInternet: Boolean
-        private get() {
+        get() {
             val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val nInfo = cm.activeNetworkInfo
             return nInfo != null && nInfo.isConnectedOrConnecting
@@ -51,7 +48,6 @@ class VpnConnection(context: Context, activity: Activity) {
             config.append(line).append("\n")
         }
         bufferedReader.readLine()
-        Log.d(ContentValues.TAG, config.toString())
         return config.toString()
     }
 
@@ -59,8 +55,8 @@ class VpnConnection(context: Context, activity: Activity) {
         fragment.startActivityForResult(VpnService.prepare(context), 1)
     }
 
-    fun checkRequirementsAndStart(fragment: Fragment /*, String requestText*/) {
-        //this.requestText = requestText;
+    fun checkRequirementsAndStart(fragment: Fragment, requestText: String) {
+        this.requestUrl = "http://192.168.1.151/get?country=$requestText"
         if (statusVPN == -1 && isConnectedToInternet) {
             val intent = VpnService.prepare(context)
             if (intent != null) requestPermission(fragment) else start()
@@ -69,31 +65,24 @@ class VpnConnection(context: Context, activity: Activity) {
 
     private fun start() {
         setStatusVPN(0)
-        sendRequest("http://192.168.1.151/get?country=" + requestText)
-    }
-
-    private fun sendRequest(url: String?) {
-        val queue = Volley.newRequestQueue(context)
-        val stringRequest = StringRequest(
-            Request.Method.GET,
-            url,
-            { serverParams: String -> enableVPN(serverParams) }) { error: VolleyError? -> }
-        queue.add(stringRequest)
+        coroutineScopeREST.launch {
+            httpHelper.getStringREST(requestUrl)?.let {
+                enableVPN(it)
+            }
+        }
     }
 
     private fun enableVPN(serverParams: String) {
         try {
+            setStatusVPN(1)
             server.set(serverParams)
-            val bufferedReader = createBufferedReader()
-            val config = createConfig(bufferedReader)
             OpenVpnApi.startVpn(
                 context,
-                config,
+                createConfig(createBufferedReader()),
                 server.country,
                 server.ovpnUserName,
                 server.ovpnUserPassword
             )
-            setStatusVPN(1)
         } catch (e: IOException) {
             e.printStackTrace()
         } catch (e: RemoteException) {
@@ -102,7 +91,7 @@ class VpnConnection(context: Context, activity: Activity) {
     }
 
     fun getServerCountry(): String? {
-        return server.country;
+        return server.country
     }
 
     fun getStatusVPN(): Int {
