@@ -19,7 +19,6 @@ class VpnConnection(context: Context, activity: Activity) {
     private val context: Context
     private val activity: Activity
     private var requestUrl = ""
-    private var httpHelper: HttpHelper = HttpHelper()
     private val coroutineScopeREST: CoroutineScope = CoroutineScope(Job())
 
     init {
@@ -66,7 +65,7 @@ class VpnConnection(context: Context, activity: Activity) {
     private fun start() {
         setStatusVPN(0)
         coroutineScopeREST.launch {
-            httpHelper.getStringREST(requestUrl)?.let {
+            HttpHelper.getStringREST(requestUrl)?.let {
                 enableVPN(it)
             }
         }

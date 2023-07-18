@@ -97,12 +97,12 @@ class ButtonVpnView(
 
         when (vpnConnection.getStatusVPN()) {
             0 -> {
-                progress = 0.3f
+                progress = 0.2f
                 duration = 800
                 text = activity.getString(R.string.notification_find_servers)
             }
             1 -> {
-                progress = 0.8f
+                progress = 0.73f
                 duration = 400
                 text = activity.getString(R.string.notification_connecting) + vpnConnection.getServerCountry()
             }

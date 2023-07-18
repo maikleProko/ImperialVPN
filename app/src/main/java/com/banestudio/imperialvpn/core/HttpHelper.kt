@@ -4,7 +4,7 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlinx.coroutines.*
 
-class HttpHelper {
+object HttpHelper {
     suspend fun getStringREST(url: String): String? {
         return withContext(Dispatchers.IO) {
             try {
@@ -17,4 +17,5 @@ class HttpHelper {
             }
         }
     }
+
 }
